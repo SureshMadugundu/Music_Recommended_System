@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Music recommended system</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        /* ==========================Font========================== */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+
+@font-face {
+  font-family: 'robotoregular';
+  src: url(http://10.30.30.125:8000/hello_flask/fonts/roboto-regular-webfont.woff) format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "robotoregular", sans-serif;
+}
+
+body {
+
+ 
+  justify-content: center;
+        background-image:url("http://10.30.30.125:8000/hello_flask/templates/{{url_for('static',filename='image1.png')}}");
+        background-size:cover;
+        background-repeat:no-repeat;
+    
+        
+}
+.container {
+
+  
+  display: flex;
+ 
+ 
+  flex-wrap: wrap;
+}
+.c{
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+           
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+
+.container .card {
+  position: relative;
+  width: 300px;
+  height: 420px;
+  background-color: #fff;
+  margin: 20px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 15px 25px rgba(0, 0, 0, .2);
+  transition: .5s ease-in-out;
+}
+
+.container:hover .card {
+  filter: blur(20px);
+  transform: scale(.9);
+  opacity: .5;
+}
+
+.container .card:hover {
+  filter: blur(0);
+  transform: scale(1);
+  opacity: 1;
+}
+
+.container .card:hover .circle {
+  clip-path: circle(600px);
+}
+
+.container .card:hover .content p {
+  color: #fff;
+}
+
+.container .card:hover .content a {
+  box-shadow: 1px 1px 2px rgba(0, 0, 0, .2),
+              -1px -1px 2px rgba(255, 255, 255, .4);
+}
+
+.container .card .content a:active {
+  box-shadow: inset 1px 1px 1px rgba(0, 0, 0, .1),
+              inset 5px 5px 5px rgba(0, 0, 0, .04),
+              inset -5px -5px 5px rgba(255, 255, 255, .07),
+              inset -1px -1px 2px rgba(255, 255, 255, .4);
+}
+
+.container .card .circle {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  clip-path: circle(180px at center 0);
+  text-align: center;
+  transition: 1s ease-in-out;
+}
+
+.container .card h2 {
+  color: #fff;
+  font-size: 3em;
+  padding: 30px 0;
+}
+
+.container .card .content {
+  position: absolute;
+  bottom: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+.container .card .content p {
+  color: #666;
+  transition: .5s ease-in-out;
+}
+
+.container .card .content a {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  background: #000;
+  color: #fff;
+  border-radius: 40px;
+  text-decoration: none;
+  margin-top: 20px;
+  transition: .8s ease-in-out;
+}
+
+.container .card:nth-child(1) .circle,
+.container .card:nth-child(1) .content a {
+  background: #ffaf00;
+}
+
+.container .card:nth-child(2) .circle,
+.container .card:nth-child(2) .content a {
+  background: #da2268;
+}
+
+.container .card:nth-child(3) .circle,
+.container .card:nth-child(3) .content a {
+  background: #bb02ff;
+}
+
+@keyframes colorChange {
+  0% {
+    color: #fff;
+  }
+
+  50% {
+    color: #b1b493;
+  }
+
+  80% {
+    color: #4f8a8b;
+  }
+
+  100% {
+    color: #fff;
+  }
+}
+
+/* =======================Responsive Breakpoint ========================== */
+
+@media only screen and (max-width: 992px) {
+  /* Add responsive styles for max-width 992px */
+}
+
+@media only screen and (max-width: 768px) {
+  /* Add responsive styles for max-width 768px */
+}
+    
+      
+    
+      </style
+  </head>
+  <body style="color:white;">
+    <div class="container">
+      <div class="pt-5">
+        <a href="http://10.30.30.125:8000/hello_flask/templates/{{url_for('static',filename='contact.html')}}"><button  class="btn btn-light btn-lg  text-center btn-outline-dark border-primary">Home</button></a>&nbsp;&nbsp;&nbsp;
+        <a href="http://10.30.30.125:8000/hello_flask/templates/{{url_for('static',filename='about.html')}}"><button  class="btn btn-light btn-lg  text-center btn-outline-dark border-primary">about</button>&nbsp;&nbsp;&nbsp;
+          <a href="http://10.30.30.125:8000/hello_flask/templates/{{url_for('static',filename='upload.html')}}"><button  class="btn btn-light btn-lg  text-center btn-outline-dark border-primary">admin</button></a>&nbsp;&nbsp;&nbsp;
+       <a href="http://10.30.30.125:8000/hello_flask/templates/{{url_for('static',filename='contact.html')}}"><button  class="btn btn-light btn-lg text-center btn-outline-dark border-primary">contact us</button></a>&nbsp;&nbsp;&nbsp;
+      
+     
+      <a href="http://10.30.30.125:8000/hello_flask/templates/{{url_for('static',filename='help.html')}}"><button  class="btn btn-light btn-lg text-center btn-outline-dark border-primary">help</button></a>
+      <a href="http://10.30.30.125:8000/hello_flask/templates/{{url_for('static',filename='login.html')}}"><button  class="btn btn-light btn-lg text-center btn-outline-dark border-primary">login</button></a>
+      </div>
+   
+        <h1 class="pt-4"><b>MUSIC RECOMMENDED SYSTEM</b></h1>
+      
+      
+        <form action="http://10.30.30.125:8000/recom" method="post">
+          
+         
+
+          
+
+        <div class="c pt-5 border-white">
+            <div class="form pt-5">
+              <h2 class="text-center pt-0"><p class="transparency">Select Your Song</p></h2>
+              <div class="text-center pt-3 m-4">
+              <select name="names" class="form border-primary rounded-4 text-center" style="height:100%">
+                {% for i in name %}
+                <option value="{{i}}">{{i}}</option>
+                {% endfor %}
+              </select>
+             
+              </br>
+
+
+              <div class="text-center pt-3">
+              <button type="submit" style="width:30%;" class="btn btn-outline-dark text-white btn-primary  text-center rounded-4">Submit</button>
+            </div>
+            
+          </div>
+          </div>
+        </div>
+        </form>
+      
+        <img align="left" style="width:15%;" src="http://10.30.30.125:8000/hello_flask/templates/{{url_for('static',filename='m2.jpeg')}}" class="pt-0 border-5 rounded-5 border-white">
+          
+       
+
+      
+        
+        {% for i in songs %}
+      
+          <div class="card">
+                <div class="circle">
+                <h2>{{i}}</h2>
+                </div>
+        <div class="content">
+            <p>If you want to play this song click on play button below</p>
+            <a href="http://10.30.30.125:8000/hello_flask/templates/{{url_for('static',filename='do.html')}}">play</a>
+        </div>
+    </div>
+
+  {% endfor %}
+        </div>
+        </div>
+</div>
+   
+</html>
